@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#29408e">
+  <title>Check in · Platcorp Group</title>
+  <link rel="icon" href="/img/platcorp-mark.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="attend">
+  <main class="attend-card">
+    <img class="attend-logo" src="/img/platcorp-logo.png" alt="Platcorp Group">
+
+    <p id="loading" class="muted center">Loading…</p>
+
+    <section id="notice" class="notice" hidden>
+      <h1 id="notice-title"></h1>
+      <p id="notice-text"></p>
+    </section>
+
+    <form id="form" novalidate hidden>
+      <header class="attend-head">
+        <p class="eyebrow">Attendance check-in</p>
+        <h1 id="title"></h1>
+        <p id="date" class="muted"></p>
+      </header>
+
+      <div class="field" data-field="name">
+        <label for="name">Full name</label>
+        <input id="name" name="name" autocomplete="name" autocapitalize="words" maxlength="100" required>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="field" data-field="email">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="254" required>
+        <p id="email-hint" class="hint" hidden></p>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="field" data-field="department">
+        <label for="department">Department</label>
+        <select id="department" name="department" required>
+          <option value="">Select your department</option>
+        </select>
+        <p class="field-error"></p>
+      </div>
+
+      <div class="field" data-field="departmentOther" id="other-field" hidden>
+        <label for="departmentOther">Which department?</label>
+        <input id="departmentOther" name="departmentOther" maxlength="60">
+        <p class="field-error"></p>
+      </div>
+
+      <p id="form-error" class="form-error" role="alert" hidden></p>
+      <button id="submit" type="submit" class="btn btn-primary btn-block">Check in</button>
+    </form>
+
+    <section id="done" class="done" hidden aria-live="polite">
+      <div class="done-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+      </div>
+      <h1 id="done-title"></h1>
+      <p id="done-text"></p>
+      <p id="done-time"></p>
+    </section>
+  </main>
+  <script src="/js/common.js"></script>
+  <script src="/js/attend.js"></script>
+</body>
+</html>

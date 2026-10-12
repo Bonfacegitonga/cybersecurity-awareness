@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Attendance · Platcorp Group</title>
+  <link rel="icon" href="/img/platcorp-mark.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="/admin"><img src="/img/platcorp-logo.png" alt="Platcorp Group"></a>
+    <span class="topbar-title">Attendance</span>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>New session</h2>
+      <form id="create-form" class="inline-form" novalidate>
+        <div class="field grow">
+          <label for="title">Title</label>
+          <input id="title" name="title" placeholder="e.g. Monthly staff meeting" maxlength="120" required>
+        </div>
+        <div class="field">
+          <label for="eventDate">Date</label>
+          <input id="eventDate" name="eventDate" type="date" required>
+        </div>
+        <button id="create" class="btn btn-primary" type="submit">Generate QR code</button>
+      </form>
+      <p id="create-error" class="form-error" role="alert" hidden></p>
+    </section>
+
+    <section class="panel">
+      <h2>Sessions</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Session</th>
+              <th class="hide-sm">Date</th>
+              <th>Status</th>
+              <th class="num">Check-ins</th>
+            </tr>
+          </thead>
+          <tbody id="sessions"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="empty muted" hidden>No sessions yet. Create one above to generate its QR code.</p>
+    </section>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

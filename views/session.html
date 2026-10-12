@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Session · Platcorp Group</title>
+  <link rel="icon" href="/img/platcorp-mark.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="/admin"><img src="/img/platcorp-logo.png" alt="Platcorp Group"></a>
+    <span class="topbar-title">Attendance</span>
+    <a class="back" href="/admin">← All sessions</a>
+  </header>
+
+  <main class="container session-layout">
+    <section class="panel qr-panel">
+      <img class="present-only present-logo" src="/img/platcorp-logo.png" alt="Platcorp Group">
+      <p class="eyebrow">Scan to check in</p>
+      <h1 id="title">Loading…</h1>
+      <p id="date" class="muted"></p>
+      <p id="qr-closed" class="qr-closed" hidden>Check-in is closed. Reopen it to accept attendees.</p>
+      <div class="qr-frame"><canvas id="qr" width="1024" height="1024" role="img" aria-label="QR code for the check-in form"></canvas></div>
+      <p class="qr-url"><a id="url" target="_blank" rel="noopener"></a></p>
+      <p class="present-only present-count"><strong id="present-count">0</strong> checked in</p>
+      <div class="actions">
+        <button id="present" class="btn btn-primary" type="button">Present full screen</button>
+        <button id="download" class="btn" type="button">Download PNG</button>
+        <button id="print" class="btn" type="button">Print</button>
+        <button id="copy" class="btn" type="button">Copy link</button>
+      </div>
+    </section>
+
+    <section class="panel attendees-panel">
+      <div class="panel-head">
+        <div>
+          <h2>Attendees <span id="count" class="count">0</span></h2>
+          <p class="muted small">Updates automatically as people check in.</p>
+        </div>
+        <div class="actions">
+          <a id="export" class="btn" href="#">Export CSV</a>
+          <button id="toggle" class="btn" type="button">Close check-in</button>
+          <button id="delete" class="btn btn-danger" type="button">Delete</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="num">#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Department</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="attendees"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="empty muted" hidden>No one has checked in yet.</p>
+    </section>
+  </main>
+
+  <button id="exit-present" class="btn present-exit present-only" type="button">Exit full screen</button>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/session.js"></script>
+</body>
+</html>

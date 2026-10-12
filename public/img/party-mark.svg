@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Two champagne glasses clinking in a cheers">
+  <defs>
+    <!-- One champagne flute, pivot at the centre of its foot (0,0), bowl rising upward. -->
+    <g id="flute">
+      <!-- foot + stem -->
+      <ellipse cx="0" cy="0" rx="22" ry="6" fill="#EAF0FF" stroke="#26407F" stroke-width="3.5" stroke-linejoin="round"/>
+      <rect x="-3" y="-54" width="6" height="54" rx="2.5" fill="#EAF0FF" stroke="#26407F" stroke-width="3.5" stroke-linejoin="round"/>
+      <!-- bowl -->
+      <path d="M -26,-146 C -24,-90 -11,-67 0,-54 C 11,-67 24,-90 26,-146 Z"
+            fill="#EAF0FF" stroke="#26407F" stroke-width="3.5" stroke-linejoin="round"/>
+      <!-- champagne -->
+      <path d="M -18,-100 C -15,-80 -7,-66 0,-56 C 7,-66 15,-80 18,-100 Z" fill="#F4C338"/>
+      <ellipse cx="0" cy="-100" rx="18" ry="5" fill="#FAD86A"/>
+      <!-- bubbles -->
+      <circle cx="-5" cy="-114" r="2.4" fill="#FFF3C4"/>
+      <circle cx="4" cy="-122" r="2" fill="#FFF3C4"/>
+      <circle cx="-2" cy="-132" r="1.6" fill="#FFF3C4"/>
+      <!-- open rim -->
+      <ellipse cx="0" cy="-146" rx="26" ry="7" fill="none" stroke="#26407F" stroke-width="3.5"/>
+    </g>
+  </defs>
+
+  <!-- the two flutes, clinking near the top centre -->
+  <use href="#flute" transform="translate(92,214) rotate(16)"/>
+  <use href="#flute" transform="translate(164,214) rotate(-16)"/>
+
+  <!-- clink sparkle where the rims meet -->
+  <g stroke="#F4C338" stroke-width="4" stroke-linecap="round">
+    <line x1="128" y1="40" x2="128" y2="54"/>
+    <line x1="112" y1="52" x2="121" y2="60"/>
+    <line x1="144" y1="52" x2="135" y2="60"/>
+  </g>
+
+  <!-- confetti -->
+  <g>
+    <circle cx="40" cy="58" r="5" fill="#EC4899"/>
+    <circle cx="214" cy="70" r="5" fill="#3B82F6"/>
+    <circle cx="206" cy="150" r="4.5" fill="#22C55E"/>
+    <circle cx="48" cy="150" r="4.5" fill="#F4C338"/>
+    <rect x="30" y="104" width="9" height="9" rx="2" transform="rotate(20 34 108)" fill="#3B82F6"/>
+    <rect x="214" y="110" width="9" height="9" rx="2" transform="rotate(-25 218 114)" fill="#EC4899"/>
+    <rect x="70" y="30" width="8" height="8" rx="2" transform="rotate(35 74 34)" fill="#22C55E"/>
+    <rect x="178" y="28" width="8" height="8" rx="2" transform="rotate(-15 182 32)" fill="#F4C338"/>
+    <path d="M198 40 l3 6 6 0.8 -4.5 4.3 1.1 6.2 -5.6 -3 -5.6 3 1.1 -6.2 -4.5 -4.3 6 -0.8 Z" fill="#F4C338"/>
+    <path d="M58 86 l2.4 4.8 5.3 0.7 -3.8 3.6 0.9 5.2 -4.8 -2.5 -4.8 2.5 0.9 -5.2 -3.8 -3.6 5.3 -0.7 Z" fill="#EC4899"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+# Keep the image small and free of secrets / machine-local state.
+.git
+.gitignore
+node_modules
+data
+*.log
+.env
+.env.example
+.claude
+Dockerfile
+docker-compose.yml
+.dockerignore
+README.md

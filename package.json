@@ -1,0 +1,17 @@
+{
+  "name": "platcorp-qr-attendance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QR code attendance check-in for Platcorp Group",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "qrcode": "^1.5.4"
+  }
+}

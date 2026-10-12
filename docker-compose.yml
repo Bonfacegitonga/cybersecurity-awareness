@@ -1,0 +1,38 @@
+services:
+  app:
+    build: .
+    image: qr-attendance
+    container_name: qr-attendance
+    restart: unless-stopped
+    init: true
+
+    # Loads ADMIN_USER, ADMIN_PASSWORD, BASE_URL, ALLOWED_EMAIL_DOMAINS,
+    # AWARENESS_MODE, etc. from .env. ADMIN_PASSWORD (>= 8 chars) is required —
+    # the server refuses to start without it.
+    env_file:
+      - .env
+
+    # These override anything in .env so the container always uses its own paths.
+    # IMPORTANT: set BASE_URL in .env to the address attendees will scan
+    # (e.g. http://<this-host-LAN-IP>:3000, or your public https:// domain).
+    # Inside a container the app cannot auto-detect the host's LAN address.
+    environment:
+      PORT: "3000"
+      DB_PATH: /app/data/attendance.db
+
+    ports:
+      - "${HOST_PORT:-3000}:3000"
+
+    # Database persists across restarts and image rebuilds.
+    volumes:
+      - qr-data:/app/data
+
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/css/styles.css"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  qr-data:
