@@ -67,7 +67,7 @@
     const canvas = $('qr');
     const ctx = canvas.getContext('2d');
     // Awareness-campaign QR codes get the festive cheers mark; normal ones keep the globe.
-    const markSrc = session.awareness ? '/img/party-mark.svg' : '/img/platcorp-mark.png';
+    const markSrc = session.awareness ? '/img/platcorp-mark.png' : '/img/platcorp-mark.png';
     const [qr, mark] = await Promise.all([
       loadImage(`${endpoint}/qr.png?t=${Date.now()}`),
       loadImage(markSrc),
